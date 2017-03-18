@@ -1,0 +1,6 @@
+
+  <h1><%= @my_thread.title %></h1>
+  <div><%= @my_thread.body %></div>
+  <%= link_to '[戻る]', my_threads_path %>
+  <%= link_to '[編集]', edit_my_thread_path(@my_thread.id) %>
+  <%= link_to '[削除]', my_thread_path(@my_thread.id), method: :delete, data: { confirm: '削除しますか？' } %>

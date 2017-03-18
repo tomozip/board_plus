@@ -1,0 +1,21 @@
+
+  <h2>Post new thread</h2>
+  <%= form_for @my_threads.new do |f| %>
+    <%= f.hidden_field :user_id, value: 1 %>
+    <h5>Title</h5>
+    <p><%= f.text_field :title %></p>
+    <h5>Text</h5>
+    <p><%= f.text_area :body %></p>
+    <p><%= f.submit %></p>
+  <% end %>
+  <h1>Threads List</h1>
+  <ul>
+  <% @my_threads.each do |my_thread| %>
+    <%= link_to my_thread_path(my_thread.id) do %>
+      <li>
+        <h3><%= my_thread.title %></h3>
+        <span><%= my_thread.body %></span>
+      </li>
+    <% end %>
+  <% end %>
+  </ul>
