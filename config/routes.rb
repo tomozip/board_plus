@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :my_threads, except: [:new] do
     resources :comments, shallow: true, only: [:create, :edit, :update, :destroy]
   end
